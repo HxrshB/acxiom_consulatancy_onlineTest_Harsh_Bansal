@@ -1,0 +1,243 @@
+/* Dashboard Container */
+.dashboard {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #f4f7f6; /* Light gray background */
+  position: relative;
+}
+
+/* Dashboard Card */
+.dashboard-card {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 80vw;
+  height: 90vh;
+  margin: 60px auto;
+  display: flex;
+  background-color: #ffffff; /* White card background */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Sidebar */
+.dashboard-options {
+  background-color: #18213e; /* Dark Blue */
+  color: #f4f7f6; /* Light gray for text */
+  display: flex;
+  flex-direction: column;
+  flex: 0.25;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.dashboard-logo {
+  margin: 50px 0;
+  color: #2a67c6; /* Blue accent */
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.dashboard-option {
+  text-decoration: none;
+  padding: 15px;
+  border-bottom: 0.5px solid #ddd;
+  color: #f4f7f6;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dashboard-option:hover,
+.dashboard-option.clicked {
+  color: #2a67c6; /* Blue hover state */
+  border-left: 5px solid #2a67c6;
+  background-color: #e8f0fe; /* Light blue hover */
+  transition: all 0.3s ease;
+}
+
+/* Sidebar Option Content */
+.dashboard-option-content {
+  display: flex;
+  flex: 0.75;
+  width: 80vw;
+}
+
+.dashboard-option-icon {
+  margin: 0 15px;
+}
+
+/* Add Books and Members Content */
+.dashboard-addbooks-content,
+.dashboard-addmember-content,
+.dashboard-transactions-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.dashboard-addbooks-content::-webkit-scrollbar,
+.dashboard-addmember-content::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboard-option-title {
+  margin: 10px 25px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #2c3e50; /* Professional dark gray-blue */
+}
+
+.dashboard-title-line {
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Form Elements */
+.addbook-form-input,
+.addmember-form-input,
+.transaction-form-input {
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+}
+
+.addbook-form-label,
+.addmember-form-label,
+.transaction-form-label {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.addbook-submit,
+.addmember-submit,
+.transaction-form-submit {
+  padding: 8px 10px;
+  border: 2px solid #2a67c6;
+  background-color: #2a67c6; /* Blue background */
+  color: #ffffff; /* White text */
+  font-weight: 600;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.addbook-submit:hover,
+.addmember-submit:hover,
+.transaction-form-submit:hover {
+  background-color: #f4f7f6; /* Light gray */
+  color: #2a67c6; /* Blue text */
+  border: 2px solid #2a67c6;
+}
+
+/* Table */
+.admindashboard-table {
+  font-family: "Segoe UI", sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  margin: 20px auto 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admindashboard-table td,
+.admindashboard-table th {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.admindashboard-table th {
+  background-color: #18213e; /* Dark blue */
+  color: #ffffff; /* White text */
+  font-weight: 700;
+}
+
+/* Dropdown */
+.transaction-form-dropdown {
+  padding: 6px;
+  border: 1px solid #ddd;
+  color: #2c3e50;
+  background-color: #ffffff;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.transaction-form-dropdown:hover {
+  border-color: #2a67c6;
+}
+
+.transaction-form-dropdown option {
+  background-color: #f4f7f6;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+/* Date Picker */
+.date-picker {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .dashboard-card {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    border-radius: 0;
+  }
+
+  .dashboard-options {
+    display: none;
+  }
+
+  .dashboard-options.active {
+    display: flex;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #18213e;
+    z-index: 5;
+    transition: all 0.3s ease;
+  }
+}
+
+
+/* Full-screen Dashboard */
+.dashboard {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw; /* Full viewport width */
+  margin: 0;
+  background-color: #f4f7f6;
+  position: relative;
+}
+
+.dashboard-card {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh; /* Full height */
+  width: 100vw; /* Full width */
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 0; /* Remove rounded corners */
+  box-shadow: none; /* Optional: Remove shadow for full screen */
+}
